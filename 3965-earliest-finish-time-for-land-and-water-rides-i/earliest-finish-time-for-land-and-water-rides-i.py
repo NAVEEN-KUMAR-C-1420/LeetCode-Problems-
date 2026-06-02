@@ -5,9 +5,9 @@ class Solution:
         m = len(waterStartTime)
         for i in range(n):
             for j in range(m):
-                land_finish = landStartTime[i] + landDuration[i]
-                finish1 = max(land_finish, waterStartTime[j]) + waterDuration[j]
-                water_finish = waterStartTime[j] + waterDuration[j]
-                finish2 = max(water_finish, landStartTime[i]) + landDuration[i]
-                ans = min(ans, finish1, finish2)
+                l= landStartTime[i] + landDuration[i]
+                f1 = max(l, waterStartTime[j]) + waterDuration[j]
+                w = waterStartTime[j] + waterDuration[j]
+                f2 = max(w, landStartTime[i]) + landDuration[i]
+                ans = min(ans, f1, f2)
         return ans
